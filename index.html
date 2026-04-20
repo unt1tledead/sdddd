@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Тест — Прогрессии</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0f13;
+    --card: #16181f;
+    --border: #2a2d3a;
+    --accent: #7c6af7;
+    --accent2: #4fc3f7;
+    --text: #e8eaf0;
+    --muted: #7a7f94;
+    --green: #56d899;
+    --answer-bg: #1a2a1f;
+    --answer-border: #56d899;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    min-height: 100vh;
+    padding: 32px 16px;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 6px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .subtitle {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin-bottom: 36px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .container { max-width: 720px; margin: 0 auto; }
+  .task {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 16px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .task::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 14px 14px 0 0;
+  }
+  .task-num {
+    font-size: 0.72rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 8px;
+  }
+  .task-title {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    border-left: 3px solid var(--accent);
+    padding-left: 12px;
+  }
+  .step {
+    margin-bottom: 12px;
+    padding-left: 12px;
+    border-left: 2px solid var(--border);
+  }
+  .step-label {
+    font-size: 0.72rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+  .step-content {
+    font-size: 1rem;
+    line-height: 2;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+  .step-content.wrap { white-space: normal; }
+  .answer {
+    background: var(--answer-bg);
+    border: 1px solid var(--answer-border);
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin-top: 14px;
+    display: inline-block;
+    font-size: 1rem;
+  }
+  .answer-label {
+    font-size: 0.72rem;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 4px;
+  }
+
+  /* Math helpers */
+  .frac {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+    margin: 0 3px;
+    font-size: 0.9em;
+  }
+  .frac .num { border-bottom: 1.5px solid var(--text); padding: 0 3px 1px; text-align: center; }
+  .frac .den { padding: 1px 3px 0; text-align: center; }
+  sup { font-size: 0.7em; vertical-align: super; }
+  sub { font-size: 0.7em; vertical-align: sub; }
+  .math { font-style: italic; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Прогрессии</h1>
+  <p class="subtitle">Тест · Вариант I</p>
+
+  <!-- Задача 1 -->
+  <div class="task">
+    <div class="task-num">Задача 1</div>
+    <div class="task-title">…; 12; <span class="math">x</span>; 6; 3; … — найти <span class="math">x</span></div>
+    <div class="step">
+      <div class="step-label">Находим d</div>
+      <div class="step-content wrap">
+        <span class="math">d</span> = 3 − 6 = −3
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-label">Находим x</div>
+      <div class="step-content wrap">
+        <span class="math">x</span> = 12 + (−3) = 9
+      </div>
+    </div>
+    <div class="answer">
+      <div class="answer-label">Ответ</div>
+      <span class="math">x</span> = <b>9</b>
+    </div>
+  </div>
+
+  <!-- Задача 2 -->
+  <div class="task">
+    <div class="task-num">Задача 2</div>
+    <div class="task-title">Найти <span class="math">a</span><sub>9</sub>, если <span class="math">a</span><sub>1</sub> = 7 и <span class="math">d</span> = 4</div>
+    <div class="step">
+      <div class="step-label">Формула n-го члена</div>
+      <div class="step-content wrap">
+        <span class="math">a<sub>n</sub></span> = <span class="math">a</span><sub>1</sub> + (<span class="math">n</span>−1)·<span class="math">d</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-label">Подставляем</div>
+      <div class="step-content wrap">
+        <span class="math">a</span><sub>9</sub> = 7 + 8·4 = 7 + 32 = 39
+      </div>
+    </div>
+    <div class="answer">
+      <div class="answer-label">Ответ</div>
+      <span class="math">a</span><sub>9</sub> = <b>39</b>
+    </div>
+  </div>
+
+  <!-- Задача 3 -->
+  <div class="task">
+    <div class="task-num">Задача 3</div>
+    <div class="task-title">Сумма первых 16 членов АП: −8; −4; 0; …</div>
+    <div class="step">
+      <div class="step-label">Дано</div>
+      <div class="step-content wrap">
+        <span class="math">a</span><sub>1</sub> = −8,&nbsp; <span class="math">d</span> = 4,&nbsp; <span class="math">n</span> = 16
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-label">Формула</div>
+      <div class="step-content">
+        <span class="math">S<sub>n</sub></span> = <span class="frac"><span class="num"><span class="math">n</span></span><span class="den">2</span></span>(2<span class="math">a</span><sub>1</sub> + (<span class="math">n</span>−1)·<span class="math">d</span>)
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-label">Подставляем</div>
+      <div class="step-content">
+        <span class="math">S</span><sub>16</sub> = <span class="frac"><span class="num">16</span><span class="den">2</span></span>(2·(−8) + 15·4) = 8·(−16 + 60) = 8·44 = 352
+      </div>
+    </div>
+    <div class="answer">
+      <div class="answer-label">Ответ</div>
+      <span class="math">S</span><sub>16</sub> = <b>352</b>
+    </div>
+  </div>
+
+  <!-- Задача 4 -->
+  <div class="task">
+    <div class="task-num">Задача 4</div>
+    <div class="task-title">Найти <span class="math">b</span><sub>1</sub> ГП, если <span class="math">b</span><sub>4</sub> = 162 и <span class="math">q</span> = −3</div>
+    <div class="step">
+      <div class="step-label">Формула</div>
+      <div class="step-content wrap">
+        <span class="math">b<sub>n</sub></span> = <span class="math">b</span><sub>1</sub>·<span class="math">q</span><sup><span class="math">n</span>−1</sup>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-label">Подставляем</div>
+      <div class="step-content">
+        162 = <span class="math">b</span><sub>1</sub>·(−3)<sup>3</sup> = <span class="math">b</span><sub>1</sub>·(−27)
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-label">Находим b₁</div>
+      <div class="step-content">
+        <span class="math">b</span><sub>1</sub> = <span class="frac"><span class="num">162</span><span class="den">−27</span></span> = −6
+      </div>
+    </div>
+    <div class="answer">
+      <div class="answer-label">Ответ</div>
+      <span class="math">b</span><sub>1</sub> = <b>−6</b>
+    </div>
+  </div>
+
+  <!-- Задача 5 -->
+  <div class="task">
+    <div class="task-num">Задача 5</div>
+    <div class="task-title">Найти <span class="math">b</span><sub>7</sub> ГП, если <span class="math">b</span><sub>1</sub> = −25 и <span class="math">q</span> = −<span class="frac"><span class="num">1</span><span class="den">5</span></span></div>
+    <div class="step">
+      <div class="step-label">Подставляем</div>
+      <div class="step-content">
+        <span class="math">b</span><sub>7</sub> = −25·<span class="frac"><span class="num">1</span><span class="den">5</span></span><sup>6</sup> = −25·<span class="frac"><span class="num">1</span><span class="den">15625</span></span> = −<span class="frac"><span class="num">1</span><span class="den">625</span></span>
+      </div>
+    </div>
+    <div class="answer">
+      <div class="answer-label">Ответ</div>
+      <span class="math">b</span><sub>7</sub> = <b>−<span class="frac"><span class="num">1</span><span class="den">625</span></span></b>
+    </div>
+  </div>
+
+  <!-- Задача 6 -->
+  <div class="task">
+    <div class="task-num">Задача 6</div>
+    <div class="task-title">ГП: <span class="math">b</span><sub>1</sub> = 11, <span class="math">q</span> = 2. Найти <span class="math">S</span><sub>5</sub></div>
+    <div class="step">
+      <div class="step-label">Формула</div>
+      <div class="step-content">
+        <span class="math">S<sub>n</sub></span> = <span class="math">b</span><sub>1</sub>·<span class="frac"><span class="num"><span class="math">q<sup>n</sup></span>−1</span><span class="den"><span class="math">q</span>−1</span></span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-label">Подставляем</div>
+      <div class="step-content">
+        <span class="math">S</span><sub>5</sub> = 11·<span class="frac"><span class="num">2<sup>5</sup>−1</span><span class="den">2−1</span></span> = 11·<span class="frac"><span class="num">31</span><span class="den">1</span></span> = 341
+      </div>
+    </div>
+    <div class="answer">
+      <div class="answer-label">Ответ</div>
+      <span class="math">S</span><sub>5</sub> = <b>341</b>
+    </div>
+  </div>
+
+  <!-- Задача 7 -->
+  <div class="task">
+    <div class="task-num">Задача 7</div>
+    <div class="task-title">Вставить 3 числа между 16 и <span class="frac"><span class="num">1</span><span class="den">16</span></span>, чтобы получилась ГП</div>
+    <div class="step">
+      <div class="step-label">Находим q</div>
+      <div class="step-content">
+        <span class="math">b</span><sub>1</sub> = 16,&nbsp; <span class="math">b</span><sub>5</sub> = <span class="frac"><span class="num">1</span><span class="den">16</span></span>
+        &nbsp;→&nbsp; <span class="math">q</span><sup>4</sup> = <span class="frac"><span class="num"><span class="frac"><span class="num">1</span><span class="den">16</span></span></span><span class="den">16</span></span> = <span class="frac"><span class="num">1</span><span class="den">256</span></span> &nbsp;→&nbsp; <span class="math">q</span> = <span class="frac"><span class="num">1</span><span class="den">4</span></span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-label">Три числа</div>
+      <div class="step-content wrap">
+        16 · <span class="frac"><span class="num">1</span><span class="den">4</span></span> = <b>4</b> &nbsp;→&nbsp; 4 · <span class="frac"><span class="num">1</span><span class="den">4</span></span> = <b>1</b> &nbsp;→&nbsp; 1 · <span class="frac"><span class="num">1</span><span class="den">4</span></span> = <b><span class="frac"><span class="num">1</span><span class="den">4</span></span></b>
+      </div>
+    </div>
+    <div class="answer">
+      <div class="answer-label">Ответ</div>
+      16; <b>4; 1; <span class="frac"><span class="num">1</span><span class="den">4</span></span></b>; <span class="frac"><span class="num">1</span><span class="den">16</span></span>
+    </div>
+  </div>
+
+  <!-- Задача 8 -->
+  <div class="task">
+    <div class="task-num">Задача 8</div>
+    <div class="task-title">Найти <span class="math">S</span><sub>5</sub> ГП, если <span class="math">b</span><sub>5</sub> = 81, <span class="math">b</span><sub>3</sub> = 36, <span class="math">q</span> &gt; 0</div>
+    <div class="step">
+      <div class="step-label">Находим q</div>
+      <div class="step-content">
+        <span class="frac"><span class="num"><span class="math">b</span><sub>5</sub></span><span class="den"><span class="math">b</span><sub>3</sub></span></span> = <span class="math">q</span><sup>2</sup> = <span class="frac"><span class="num">81</span><span class="den">36</span></span> = <span class="frac"><span class="num">9</span><span class="den">4</span></span> &nbsp;→&nbsp; <span class="math">q</span> = <span class="frac"><span class="num">3</span><span class="den">2</span></span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-label">Находим b₁</div>
+      <div class="step-content">
+        <span class="math">b</span><sub>3</sub> = <span class="math">b</span><sub>1</sub>·<span class="math">q</span><sup>2</sup> &nbsp;→&nbsp; 36 = <span class="math">b</span><sub>1</sub>·<span class="frac"><span class="num">9</span><span class="den">4</span></span> &nbsp;→&nbsp; <span class="math">b</span><sub>1</sub> = 16
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-label">Сумма S₅</div>
+      <div class="step-content">
+        <span class="math">S</span><sub>5</sub> = 16·<span class="frac"><span class="num">(<span class="frac"><span class="num">3</span><span class="den">2</span></span>)<sup>5</sup>−1</span><span class="den"><span class="frac"><span class="num">3</span><span class="den">2</span></span>−1</span></span> = 16·<span class="frac"><span class="num"><span class="frac"><span class="num">243</span><span class="den">32</span></span>−1</span><span class="den"><span class="frac"><span class="num">1</span><span class="den">2</span></span></span></span> = 16·<span class="frac"><span class="num"><span class="frac"><span class="num">211</span><span class="den">32</span></span></span><span class="den"><span class="frac"><span class="num">1</span><span class="den">2</span></span></span></span> = 16·<span class="frac"><span class="num">211</span><span class="den">16</span></span> = 211
+      </div>
+    </div>
+    <div class="answer">
+      <div class="answer-label">Ответ</div>
+      <span class="math">S</span><sub>5</sub> = <b>211</b>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
