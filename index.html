@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Решение задач: Вариант 2</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: sans-serif; background-color: #1a1e2e; color: #f8fafc; padding: 20px; line-height: 1.5; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .card { background-color: #242b3d; border-radius: 12px; padding: 20px; margin-bottom: 20px; border-left: 4px solid #6366f1; }
+        .label { color: #94a3b8; font-weight: 600; text-transform: uppercase; font-size: 0.75rem; display: block; margin-top: 10px; }
+        .ans { color: #4ade80; font-weight: bold; display: block; margin-top: 10px; border-top: 1px solid #334155; padding-top: 10px; }
+        .math-block { background: #1a1e2e; padding: 15px; border-radius: 8px; margin: 10px 0; border: 1px solid #334155; }
+        h1 { text-align: center; color: #818cf8; }
+        h3 { margin-top: 0; color: #f1f5f9; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Все решения (Вариант 2)</h1>
+
+        <div class="card">
+            <h3>Задача №1 (Арифметическая)</h3>
+            <span class="label">Дано:</span>
+            <p>...; 11; x; 19; 23; ...</p>
+            <span class="label">Решение:</span>
+            <div class="math-block">
+                1. Находим разность: \( d = 23 - 19 = 4 \) <br>
+                2. Находим x: \( x = 11 + d = 11 + 4 = 15 \)
+            </div>
+            <span class="ans">Ответ: 15</span>
+        </div>
+
+        <div class="card">
+            <h3>Задача №2 (Арифметическая)</h3>
+            <span class="label">Дано:</span>
+            <p>\( a_1 = -8, d = 2, n = 10 \)</p>
+            <span class="label">Решение:</span>
+            <div class="math-block">
+                \( a_{10} = a_1 + (10 - 1)d \) <br>
+                \( a_{10} = -8 + 9 \cdot 2 = -8 + 18 = 10 \)
+            </div>
+            <span class="ans">Ответ: 10</span>
+        </div>
+
+        <div class="card">
+            <h3>Задача №3 (Арифметическая)</h3>
+            <span class="label">Дано:</span>
+            <p>\( 7, 11, 15, ... \), найти \( S_{18} \)</p>
+            <span class="label">Решение:</span>
+            <div class="math-block">
+                1. \( a_1 = 7, d = 11 - 7 = 4 \) <br>
+                2. \( S_{18} = \frac{2a_1 + (18-1)d}{2} \cdot 18 \) <br>
+                3. \( S_{18} = \frac{2 \cdot 7 + 17 \cdot 4}{2} \cdot 18 = (14 + 68) \cdot 9 = 82 \cdot 9 = 738 \)
+            </div>
+            <span class="ans">Ответ: 738</span>
+        </div>
+
+        <div class="card">
+            <h3>Задача №4 (Геометрическая)</h3>
+            <span class="label">Дано:</span>
+            <p>\( b_5 = -192, q = 2 \)</p>
+            <span class="label">Решение:</span>
+            <div class="math-block">
+                \( b_5 = b_1 \cdot q^4 \) <br>
+                \( -192 = b_1 \cdot 2^4 \implies -192 = b_1 \cdot 16 \) <br>
+                \( b_1 = -192 / 16 = -12 \)
+            </div>
+            <span class="ans">Ответ: -12</span>
+        </div>
+
+        <div class="card">
+            <h3>Задача №5 (Геометрическая)</h3>
+            <span class="label">Дано:</span>
+            <p>\( b_1 = 4, q = 1/4, n = 6 \)</p>
+            <span class="label">Решение:</span>
+            <div class="math-block">
+                \( b_6 = b_1 \cdot q^5 \) <br>
+                \( b_6 = 4 \cdot (1/4)^5 = 4 \cdot \frac{1}{1024} = \frac{1}{256} \)
+            </div>
+            <span class="ans">Ответ: 1/256</span>
+        </div>
+
+        <div class="card">
+            <h3>Задача №6 (Геометрическая)</h3>
+            <span class="label">Дано:</span>
+            <p>\( b_1 = 4, q = 2, n = 7 \)</p>
+            <span class="label">Решение:</span>
+            <div class="math-block">
+                \( S_7 = \frac{b_1(q^7 - 1)}{q - 1} \) <br>
+                \( S_7 = \frac{4(128 - 1)}{2 - 1} = 4 \cdot 127 = 508 \)
+            </div>
+            <span class="ans">Ответ: 508</span>
+        </div>
+
+        <div class="card">
+            <h3>Задача №7 (Геометрическая)</h3>
+            <span class="label">Дано:</span>
+            <p>Числа \( 1/9 \) и \( 9 \), между ними 3 числа.</p>
+            <span class="label">Решение:</span>
+            <div class="math-block">
+                1. \( b_1 = 1/9, b_5 = 9 \) <br>
+                2. \( b_5 = b_1 \cdot q^4 \implies 9 = \frac{1}{9} \cdot q^4 \implies q^4 = 81 \implies q = 3 \) <br>
+                3. Числа: \( b_2 = 1/3, b_3 = 1, b_4 = 3 \)
+            </div>
+            <span class="ans">Ответ: 1/3, 1, 3</span>
+        </div>
+
+        <div class="card">
+            <h3>Задача №8 (Геометрическая)</h3>
+            <span class="label">Дано:</span>
+            <p>\( b_2 = 4, b_4 = 1, q < 0, n = 6 \)</p>
+            <span class="label">Решение:</span>
+            <div class="math-block">
+                1. \( q^2 = b_4 / b_2 = 1/4 \implies q = -0.5 \) <br>
+                2. \( b_1 = b_2 / q = 4 / (-0.5) = -8 \) <br>
+                3. \( S_6 = \frac{b_1(q^6 - 1)}{q - 1} = \frac{-8(1/64 - 1)}{-1.5} = -5.25 \)
+            </div>
+            <span class="ans">Ответ: -5.25</span>
+        </div>
+
+    </div>
+</body>
+</html>
