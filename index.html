@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --bg: #121212;
+            --card: #1e1e1e;
+            --accent: #bb86fc;
+            --secondary: #03dac6;
+            --text: #e0e0e0;
+            --border: #333;
+        }
+        body {
+            font-family: -apple-system, system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 10px;
+        }
+        .container { max-width: 600px; margin: 0 auto; }
+        .task-card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border);
+        }
+        .task-num {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 2px 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        .label {
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            display: block;
+            margin-top: 10px;
+        }
+        .math-scroll {
+            overflow-x: auto;
+            white-space: nowrap;
+            background: #252525;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 8px 0;
+            font-family: "Times New Roman", serif;
+            font-style: italic;
+            font-weight: bold;
+            border: 1px solid #444;
+        }
+        .ans {
+            color: var(--secondary);
+            font-weight: bold;
+            border-top: 1px dashed var(--border);
+            padding-top: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="task-card">
+            <div class="task-num">Задача 1</div>
+            <span class="label">Дано:</span>
+            <p>∠C=90°, AB=45, sin A = 1/3. Найти BH.</p>
+            <span class="label">Решение:</span>
+            <div class="math-scroll">1) BC = AB · sin A = 45 · (1/3) = 15</div>
+            <div class="math-scroll">2) В ΔABC: BC² = BH · AB ⇒ 15² = BH · 45</div>
+            <div class="math-scroll">3) 225 = BH · 45 ⇒ BH = 225 / 45 = 5</div>
+            <div class="ans">Ответ: 5</div>
+        </div>
+
+        <div class="task-card">
+            <div class="task-num">Задача 2</div>
+            <span class="label">Дано:</span>
+            <p>AB=BC=10, AC=16. Найти sin A.</p>
+            <span class="label">Решение:</span>
+            <div class="math-scroll">1) AH = AC / 2 = 8</div>
+            <div class="math-scroll">2) BH = √(AB² - AH²) = √(100 - 64) = 6</div>
+            <div class="math-scroll">3) sin A = BH / AB = 6 / 10 = 0,6</div>
+            <div class="ans">Ответ: 0,6</div>
+        </div>
+
+        <div class="task-card">
+            <div class="task-num">Задача 3</div>
+            <span class="label">Дано:</span>
+            <p>MO=10, ∠AOB=120°. Найти AB.</p>
+            <span class="label">Решение:</span>
+            <div class="math-scroll">1) ΔAOB равнобедр., ∠OAB = ∠OBA = (180-120)/2 = 30°</div>
+            <div class="math-scroll">2) В ΔMAO: ∠AOM = 120/2 = 60° ⇒ ∠AMO = 30°</div>
+            <div class="math-scroll">3) AO = MO · sin 30° = 10 · 0,5 = 5 (радиус)</div>
+            <div class="math-scroll">4) AB = 2 · AO · sin 60° = 2 · 5 · (√3/2) = 5√3 ≈ 8,66</div>
+            <div class="ans">Ответ: 5√3</div>
+        </div>
+
+        <div class="task-card">
+            <div class="task-num">Задача 4</div>
+            <span class="label">Дано:</span>
+            <p>AB=6, биссектрисы пересекаются на стороне BC.</p>
+            <span class="label">Решение:</span>
+            <div class="math-scroll">1) ΔABM равнобедр. (накр. леж. ∠) ⇒ BM = AB = 6</div>
+            <div class="math-scroll">2) ΔDMC равнобедр. ⇒ MC = CD = 6</div>
+            <div class="math-scroll">3) BC = 6 + 6 = 12</div>
+            <div class="math-scroll">4) P = 2 · (6 + 12) = 36</div>
+            <div class="ans">Ответ: 36</div>
+        </div>
+
+        <div class="task-card">
+            <div class="task-num">Задача 5</div>
+            <span class="label">Дано:</span>
+            <p>r=3, AB=4. Найти AC и AO.</p>
+            <span class="label">Решение:</span>
+            <div class="math-scroll">1) Отрезки касательных равны: AC = AB = 4 см</div>
+            <div class="math-scroll">2) AO = √(AB² + r²) = √(16 + 9) = 5 см</div>
+            <div class="ans">Ответ: AC=4, AO=5</div>
+        </div>
+
+        <div class="task-card">
+            <div class="task-num">Задача 6</div>
+            <span class="label">Дано:</span>
+            <p>◡AB:◡BC = 11:12, ∠AOC=130°.</p>
+            <span class="label">Решение:</span>
+            <div class="math-scroll">1) ◡AC = ∠AOC = 130°</div>
+            <div class="math-scroll">2) ◡AB + ◡BC = 360 - 130 = 230°</div>
+            <div class="math-scroll">3) 11x + 12x = 230 ⇒ x = 10; ◡AB=110°, ◡BC=120°</div>
+            <div class="math-scroll">4) ∠BCA = 110/2 = 55°; ∠BAC = 120/2 = 60°</div>
+            <div class="ans">Ответ: 55° и 60°</div>
+        </div>
+
+        <div class="task-card">
+            <div class="task-num">Задача 7</div>
+            <span class="label">Дано:</span>
+            <p>ME=12, NE=3, PE=KE.</p>
+            <span class="label">Решение:</span>
+            <div class="math-scroll">1) PE · KE = ME · NE ⇒ PE² = 12 · 3 = 36</div>
+            <div class="math-scroll">2) PE = 6; PK = 6 + 6 = 12</div>
+            <div class="ans">Ответ: 12</div>
+        </div>
+
+        <div class="task-card">
+            <div class="task-num">Задача 8</div>
+            <span class="label">Дано:</span>
+            <p>R=16, ∠OAB=30°, ∠OCB=45°.</p>
+            <span class="label">Решение:</span>
+            <div class="math-scroll">1) AB = 2R · cos(∠OAB) = 2 · 16 · cos 30° = 32 · (√3/2) = 16√3</div>
+            <div class="math-scroll">2) BC = 2R · cos(∠OCB) = 2 · 16 · cos 45° = 32 · (√2/2) = 16√2</div>
+            <div class="ans">Ответ: AB=16√3, BC=16√2</div>
+        </div>
+    </div>
+</body>
+</html>
