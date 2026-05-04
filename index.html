@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --bg: #121212;
+            --card: #1e1e1e;
+            --accent: #bb86fc;
+            --secondary: #03dac6;
+            --text: #e0e0e0;
+            --border: #333;
+        }
+        body {
+            font-family: -apple-system, system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 10px;
+        }
+        .container { max-width: 600px; margin: 0 auto; }
+        .task-card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border);
+        }
+        .task-num {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 2px 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        .label {
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            display: block;
+            margin-top: 10px;
+        }
+        .math-scroll {
+            overflow-x: auto;
+            white-space: nowrap;
+            background: #252525;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 8px 0;
+            font-family: "Times New Roman", serif;
+            font-style: italic;
+            font-weight: bold;
+            border: 1px solid #444;
+        }
+        .svg-box {
+            width: 100%;
+            height: 160px;
+            background: #252525;
+            border-radius: 8px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .ans {
+            color: var(--secondary);
+            font-weight: bold;
+            border-top: 1px dashed var(--border);
+            padding-top: 8px;
+            margin-top: 10px;
+        }
+        svg { max-height: 100%; max-width: 100%; }
+        line, polyline, polygon, circle { stroke: #e0e0e0; stroke-width: 2; fill: none; }
+        text { fill: var(--accent); font-size: 13px; font-family: Arial; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="task-card">
+            <div class="task-num">Задача 1</div>
+            <div class="svg-box">
+                <svg viewBox="0 0 200 120">
+                    <polygon points="40,100 160,100 40,20" />
+                    <line x1="40" y1="100" x2="72" y2="58" stroke-dasharray="4"/>
+                    <text x="30" y="110">A</text><text x="165" y="110">B</text>
+                    <text x="35" y="15">C</text><text x="75" y="55">H</text>
+                </svg>
+            </div>
+            <span class="label">Дано:</span>
+            <p>ΔABC, ∠C=90°, CH⊥AB, AB=45</p>
+            <span class="label">Решение:</span>
+            <div class="math-scroll">BC² = BH · AB ⇒ BH = BC² / AB</div>
+            <div class="ans">Ответ: BH = BC² / 45</div>
+        </div>
+
+        <div class="task-card">
+            <div class="task-num">Задача 2</div>
+            <div class="svg-box">
+                <svg viewBox="0 0 200 120">
+                    <polygon points="100,20 40,100 160,100" />
+                    <line x1="100" y1="20" x2="100" y2="100" stroke-dasharray="4"/>
+                    <text x="95" y="15">B</text><text x="30" y="110">A</text>
+                    <text x="165" y="110">C</text><text x="95" y="115">H</text>
+                </svg>
+            </div>
+            <span class="label">Дано:</span>
+            <p>ΔABC, AB=BC=10, AC=16</p>
+            <span class="label">Решение:</span>
+            <div class="math-scroll">AH = AC/2 = 8</div>
+            <div class="math-scroll">BH = √(10² - 8²) = 6</div>
+            <div class="math-scroll">S = ½ · 16 · 6 = 48</div>
+            <div class="ans">Ответ: BH=6, S=48</div>
+        </div>
+
+        <div class="task-card">
+            <div class="task-num">Задача 3</div>
+            <div class="svg-box">
+                <svg viewBox="0 0 200 130">
+                    <circle cx="120" cy="65" r="45" />
+                    <line x1="30" y1="65" x2="110" y2="25" />
+                    <line x1="30" y1="65" x2="110" y2="105" />
+                    <text x="20" y="70">M</text><text x="125" y="70">O</text>
+                    <text x="105" y="20">A</text><text x="105" y="118">B</text>
+                </svg>
+            </div>
+            <span class="label">Дано:</span>
+            <p>Окр(O, r), MA, MB - кас., MO=10</p>
+            <span class="label">Решение:</span>
+            <div class="math-scroll">MA = √(100 - r²)</div>
+            <div class="math-scroll">AK = (MA · r) / MO; AB = 2 · AK</div>
+            <div class="ans">Ответ: AB = (2r · √(100-r²)) / 10</div>
+        </div>
+
+        <div class="task-card">
+            <div class="task-num">Задача 4</div>
+            <div class="svg-box">
+                <svg viewBox="0 0 200 110">
+                    <polygon points="40,90 160,90 180,30 60,30" />
+                    <line x1="40" y1="90" x2="110" y2="30" stroke-dasharray="2"/>
+                    <line x1="160" y1="90" x2="110" y2="30" stroke-dasharray="2"/>
+                    <text x="30" y="100">A</text><text x="165" y="100">D</text>
+                    <text x="105" y="25">M</text>
+                </svg>
+            </div>
+            <span class="label">Дано:</span>
+            <p>ABCD - парал-м, AB=6, бисс. ∠A, D</p>
+            <span class="label">Решение:</span>
+            <div class="math-scroll">BM = AB = 6; MC = CD = 6</div>
+            <div class="math-scroll">BC = 12; P = 2 · (6 + 12) = 36</div>
+            <div class="ans">Ответ: P = 36</div>
+        </div>
+
+        <div class="task-card">
+            <div class="task-num">Задача 5</div>
+            <div class="svg-box">
+                <svg viewBox="0 0 200 130">
+                    <circle cx="120" cy="65" r="45" />
+                    <line x1="30" y1="65" x2="110" y2="25" />
+                    <text x="20" y="70">A</text><text x="125" y="70">O</text>
+                    <text x="105" y="20">B</text>
+                </svg>
+            </div>
+            <span class="label">Дано:</span>
+            <p>Окр(O, 3), AB=4, AC-кас.</p>
+            <span class="label">Решение:</span>
+            <div class="math-scroll">AC = AB = 4</div>
+            <div class="math-scroll">AO = √(4² + 3²) = 5</div>
+            <div class="ans">Ответ: AC=4, AO=5</div>
+        </div>
+
+        <div class="task-card">
+            <div class="task-num">Задача 6</div>
+            <div class="svg-box">
+                <svg viewBox="0 0 200 130">
+                    <circle cx="100" cy="65" r="50" />
+                    <polyline points="70,25 150,65 70,105" />
+                    <text x="65" y="20">B</text><text x="65" y="118">A</text><text x="155" y="70">C</text>
+                </svg>
+            </div>
+            <span class="label">Дано:</span>
+            <p>◡AB:◡BC = 11:12, ∠AOC=130°</p>
+            <span class="label">Решение:</span>
+            <div class="math-scroll">◡AC=130°; ◡AB+◡BC=230°</div>
+            <div class="math-scroll">◡AB=110°, ◡BC=120°</div>
+            <div class="math-scroll">∠BCA = 55°; ∠BAC = 60°</div>
+            <div class="ans">Ответ: 55° и 60°</div>
+        </div>
+
+        <div class="task-card">
+            <div class="task-num">Задача 7</div>
+            <div class="svg-box">
+                <svg viewBox="0 0 200 130">
+                    <circle cx="100" cy="65" r="55" />
+                    <line x1="60" y1="20" x2="140" y2="110" />
+                    <line x1="50" y1="90" x2="150" y2="40" />
+                    <text x="105" y="75">E</text><text x="55" y="15">M</text>
+                    <text x="145" y="115">N</text><text x="40" y="95">P</text>
+                    <text x="155" y="35">K</text>
+                </svg>
+            </div>
+            <span class="label">Дано:</span>
+            <p>MN∩PK=E, ME=12, NE=3, PE=KE</p>
+            <span class="label">Решение:</span>
+            <div class="math-scroll">12 · 3 = x² ⇒ x = 6</div>
+            <div class="math-scroll">PK = 6 + 6 = 12</div>
+            <div class="ans">Ответ: PK = 12</div>
+        </div>
+    </div>
+</body>
+</html>
